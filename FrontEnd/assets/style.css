@@ -125,6 +125,38 @@ li:hover {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
+
+.filters {
+  display: flex;
+  gap: 10px; /* espace entre les boutons */
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* pour que ça s'adapte aux petits écrans */
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border: 2px solid #2f5d4f; /* vert foncé de la bordure */
+  background-color: white;
+  color: #2f5d4f; /* texte vert foncé */
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+  border-radius: 20px; /* coins arrondis */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #2f5d4f; /* fond vert foncé au hover */
+  color: white; /* texte blanc */
+}
+
+.filter-btn.active {
+  background-color: #2f5d4f; /* fond vert foncé pour le bouton actif */
+  color: white; /* texte blanc */
+}
+
+
 .gallery {
 	width: 100%;
 	display: grid;
