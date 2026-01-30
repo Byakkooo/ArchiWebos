@@ -95,7 +95,12 @@ nav li {
 	font-size: 1.2em;
 }
 
-li:hover {
+nav a {
+  color: black; 
+  text-decoration: none;
+}
+
+li:hover, nav a:hover {
 	color: #B1663C;
 }
 #introduction {
@@ -202,6 +207,8 @@ margin: auto;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
+/* Sélecteur CSS qui permet de styliser uniquement les inputs de type submit */
+
 input[type="submit"]{
 	font-family: 'Syne';
 	font-weight: 700;
@@ -219,3 +226,76 @@ footer nav ul {
 	margin: 2em
 }
 
+/* ===== LOGIN PAGE ===== */
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120px;
+}
+
+.login h2 {
+  color: #1D6154;
+  margin-bottom: 40px;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+}
+
+#login-form label {
+  margin-bottom: 6px;
+}
+
+#login-form input {
+  height: 50px;
+  margin-bottom: 30px;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  padding: 0 15px;
+  font-size: 14px;
+}
+
+#login-form button {
+  align-self: center;
+  margin-top: 10px;
+  padding: 10px 40px;
+  background-color: #1D6154;
+  color: white;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.forgot-password {
+  margin-top: 28px;
+  text-align: center;
+  color: black;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.footer-login {
+	position: absolute;
+	bottom: 20px;
+	right: 10%;
+}
+
+footer ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+footer li {
+	font-size: 14px;
+}
+
+html {
+
+	background-color:#FFFEF8 ;
+}
