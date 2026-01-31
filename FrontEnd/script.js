@@ -78,3 +78,48 @@ function setActiveButton(activeBtn) {
   buttons.forEach(btn => btn.classList.remove("active"));
   activeBtn.classList.add("active");
 }
+
+
+//////////
+
+const token = localStorage.getItem("token");
+
+if (token) {
+  const banner = document.createElement("div");
+  banner.textContent = "🖊 mode édition";
+  banner.style.backgroundColor = "black";
+  banner.style.color = "white";
+  banner.style.height = "59px";
+  banner.style.display = "flex";
+  banner.style.alignItems = "center";
+  banner.style.justifyContent = "center";
+  document.body.prepend(banner);
+}
+
+const loginLink = document.querySelector("nav ul li a");
+
+if (token) {
+  loginLink.textContent = "logout";
+  loginLink.href = "#";
+  loginLink.addEventListener("click", () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  });
+}
+
+const filters = document.querySelector(".filters");
+
+if (token && filters) {
+  filters.style.display = "none";
+}
+
+const portfolioTitle = document.querySelector("#portfolio h2");
+
+if (token) {
+  const editBtn = document.createElement("span");
+  editBtn.textContent = " 🖊 modifier";
+  editBtn.style.fontSize = "14px";
+  editBtn.style.cursor = "pointer";
+  editBtn.style.marginLeft = "15px";
+  portfolioTitle.appendChild(editBtn);
+}
