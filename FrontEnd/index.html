@@ -10,6 +10,64 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
+
+<!-- BOUTON MODIFIER (visible seulement connecté) -->
+
+
+
+<!-- ================= MODALE ================= -->
+
+<div id="modal" class="modal hidden">
+
+  <div class="modal-content">
+
+      <!-- Croix -->
+      <span class="close-modal">&times;</span>
+
+      <!-- ====== VUE GALERIE ====== -->
+      <div id="modal-gallery-view">
+
+          <h2>Galerie photo</h2>
+
+          <div class="modal-gallery"></div>
+
+          <hr>
+
+          <button id="show-add-photo">
+              Ajouter une photo
+          </button>
+
+      </div>
+
+
+      <!-- ====== VUE FORMULAIRE ====== -->
+      <div id="modal-form-view" class="hidden">
+
+          <span id="back-arrow">←</span>
+
+          <h2>Ajout photo</h2>
+
+          <form>
+
+              <input type="file" required>
+              <input type="text" placeholder="Titre" required>
+
+              <select required>
+                  <option value="">Catégorie</option>
+              </select>
+
+              <button type="submit">Valider</button>
+
+          </form>
+
+      </div>
+
+  </div>
+
+</div>
+
+
+
 <body>
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
@@ -99,6 +157,8 @@
 </main>
 
 <script src="script.js"></script>
+<script src="modal.js"></script>
+
 
 <footer>
 	<nav>

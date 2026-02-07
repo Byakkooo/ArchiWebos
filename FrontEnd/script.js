@@ -117,9 +117,17 @@ const portfolioTitle = document.querySelector("#portfolio h2");
 
 if (token) {
   const editBtn = document.createElement("span");
+
   editBtn.textContent = " 🖊 modifier";
   editBtn.style.fontSize = "14px";
   editBtn.style.cursor = "pointer";
   editBtn.style.marginLeft = "15px";
+
+
+  editBtn.id = "open-modal";
+
   portfolioTitle.appendChild(editBtn);
 }
+
+
+

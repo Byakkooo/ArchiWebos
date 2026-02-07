@@ -1,37 +1,56 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   const form = document.getElementById("login-form");
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
+
     e.preventDefault();
 
+   
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    // Supprime ancien message d’erreur s’il existe
-    const existingError = document.querySelector(".login-error");
-    if (existingError) {
-      existingError.remove();
-    }
+    try {
 
-    // IDENTIFIANTS DE TEST (à remplacer par API plus tard)
-    if (email === "admin@test.com" && password === "1234") {
-      // Stockage du token
-      localStorage.setItem("token", "admin-auth-token");
+      const response = await fetch("http://localhost:5678/api/users/login", {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json" 
+        },
+        body: JSON.stringify({
+          email,
+          password
+        })
+      });
 
-      // Redirection vers la page d’accueil
+      // si mauvais login
+      if (!response.ok) {
+        throw new Error("Login failed");
+      }
+
+      const data = await response.json();
+
+      // stocker le token
+      localStorage.setItem("token", data.token);
+
+      // redirection
       window.location.href = "index.html";
-    } else {
-      // Création dynamique du message d’erreur
-      const error = document.createElement("p");
-      error.classList.add("login-error");
-      error.textContent = "E-mail ou mot de passe incorrect";
-      error.style.color = "#d65353";
-      error.style.marginTop = "20px";
-      error.style.textAlign = "center";
-      error.style.fontSize = "14px";
-      error.style.fontWeight = "500";
 
-      form.appendChild(error);
+    } catch (error) {
+
+      const errorMsg = document.createElement("p");
+      errorMsg.classList.add("login-error");
+      errorMsg.textContent = "E-mail ou mot de passe incorrect";
+
+      errorMsg.style.color = "#d65353";
+      errorMsg.style.marginTop = "20px";
+      errorMsg.style.textAlign = "center";
+      errorMsg.style.fontSize = "14px";
+      errorMsg.style.fontWeight = "500";
+
+      form.appendChild(errorMsg);
     }
+
   });
+
 });

@@ -47,6 +47,54 @@ table {
 	border-spacing: 0;
 }
 /** end reset css**/
+
+/** MODALE **/
+.hidden{
+    display:none;
+}
+
+/* Fond sombre */
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* 🔥 PLUS FORT que .modal */
+.modal.hidden{
+    display:none;
+}
+
+
+/* Boite blanche */
+.modal-content{
+    background:white;
+    width:500px;
+    padding:30px;
+    border-radius:10px;
+    position:relative;
+}
+
+/* Croix */
+.close-modal{
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:24px;
+    cursor:pointer;
+}
+
+/* Flèche */
+#back-arrow{
+    cursor:pointer;
+    font-size:20px;
+}
+
+
 body {
 	max-width: 1140px;
 	margin:auto;
