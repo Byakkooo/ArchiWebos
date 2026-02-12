@@ -7,7 +7,7 @@ filtersContainer.classList.add("filters");
 // Insertion du conteneur juste au-dessus de la galerie
 gallery.parentNode.insertBefore(filtersContainer, gallery);
 
-let allWorks = [];
+window.allWorks = [];
 
 // Récupération des projets
 fetch("http://localhost:5678/api/works")
@@ -130,4 +130,22 @@ if (token) {
 }
 
 
+function displayModalWorks(works){
+
+  const modalGallery = document.querySelector(".modal-gallery");
+
+  modalGallery.innerHTML = "";
+
+  works.forEach(work => {
+
+    const figure = document.createElement("figure");
+
+    figure.innerHTML = `
+      <img src="${work.imageUrl}" alt="${work.title}">
+    `;
+
+    modalGallery.appendChild(figure);
+  });
+
+}
 
