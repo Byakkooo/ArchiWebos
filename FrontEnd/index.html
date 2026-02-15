@@ -51,18 +51,44 @@
 
           <h2>Ajout photo</h2>
 
-          <form>
+          <form id="photo-form">
 
-              <input type="file" required>
-              <input type="text" placeholder="Titre" required>
+    <!-- ZONE UPLOAD -->
+    <div class="upload-zone">
 
-              <select required>
-                  <option value="">Catégorie</option>
-              </select>
+        <i class="fa-regular fa-image upload-icon"></i>
 
-              <button type="submit">Valider</button>
+        <label for="image-input" class="upload-button">
+            + Ajouter photo
+        </label>
 
-          </form>
+        <p class="upload-info">jpg, png : 4mo max</p>
+
+        <input id="image-input" type="file" accept="image/png, image/jpeg" hidden required>
+
+        <img id="image-preview" class="hidden preview-image"/>
+
+    </div>
+
+    <!-- TITRE -->
+    <label for="title">Titre</label>
+    <input id="title" type="text" required>
+
+    <!-- CATEGORIE -->
+    <label for="category">Catégorie</label>
+    <select id="category" required>
+        <option value=""> </option>
+    </select>
+
+    <hr>
+
+    <button type="submit" id="submit-btn" disabled>
+        Valider
+    </button>
+
+</form>
+
+
 
       </div>
 
