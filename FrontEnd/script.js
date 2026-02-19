@@ -86,7 +86,7 @@ const token = localStorage.getItem("token");
 
 if (token) {
   const banner = document.createElement("div");
-  banner.textContent = "🖊 mode édition";
+  banner.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>&nbsp;mode édition';
   banner.style.backgroundColor = "black";
   banner.style.color = "white";
   banner.style.height = "59px";
@@ -118,10 +118,11 @@ const portfolioTitle = document.querySelector("#portfolio h2");
 if (token) {
   const editBtn = document.createElement("span");
 
-  editBtn.textContent = " 🖊 modifier";
+  editBtn.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>&nbsp;modifier';
   editBtn.style.fontSize = "14px";
   editBtn.style.cursor = "pointer";
   editBtn.style.marginLeft = "15px";
+  editBtn.style.color = "black";
 
 
   editBtn.id = "open-modal";
